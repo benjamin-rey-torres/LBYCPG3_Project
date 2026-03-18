@@ -9,6 +9,7 @@
 // $body-color: #111;
 // $font-family-base: verdana;
 $primary: #C890A7;
+$success: #511977;
 $body-bg: #FBF5E5;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
@@ -17,14 +18,11 @@ $body-bg: #FBF5E5;
 
 // 4. Include any default map overrides here
 
-
-
 // 5. Include remainder of required parts
 @import "../node_modules/bootstrap/scss/maps";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/root";
 
-$primary: #C890A7;
 
 // 6. Include any other optional stylesheet partials as desired; list below is not inclusive of all available stylesheets
 @import "../node_modules/bootstrap/scss/utilities";
@@ -56,3 +54,35 @@ $primary: #C890A7;
           inset 0 0.5em 1.5em #0000001a,
           inset 0 0.125em 0.5em #00000026;
 }
+
+.btn-primary {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: #{$white};
+  --bs-btn-bg: #{$primary};
+  --bs-btn-border-color: var(--bd-violet-bg);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #{shade-color($primary, 10%)};
+  --bs-btn-hover-border-color: #{shade-color($primary, 10%)};
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #{shade-color($primary, 20%)};
+  --bs-btn-active-border-color: #{shade-color($primary, 20%)};
+}
+
+.btn-outline-success {
+  --bs-btn-color: #{$success};
+  --bs-btn-border-color: #{$success};
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #{$success};
+  --bs-btn-hover-border-color: #{$success};
+  --bs-btn-focus-shadow-rgb: 25, 135, 84;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #{$success};
+  --bs-btn-active-border-color: #{$success};
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #{$success};
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #{$success};
+  --bs-gradient: none;
+}
+
