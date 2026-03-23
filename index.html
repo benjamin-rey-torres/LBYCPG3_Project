@@ -14,7 +14,7 @@
     
   <header>
     <!-- Nav Bar -->
-    <nav class="navbar navbar-expand-lg bg-primary text-primary">
+    <nav class="navbar navbar-expand-lg bg-primary text-primary fixed-top">
       <div class="container-fluid text-primary">
         <a class="navbar-brand text-white" href="#">Navbar</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,8 +31,13 @@
                 Jump To 
               </a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link text-black dropdown-item" href="#Part Comparison">Jump to Part Comparison</a></li>
-                <li><a class="nav-link text-black dropdown-item" href="#Part Selector">Jump to Part Selector</a></li>
+                <li><a class="nav-link text-black dropdown-item" href="#PartComparison">Jump to Part Comparison</a></li>
+                <li><a class="nav-link text-black dropdown-item" href="#PartSelector">Jump to Part Selector</a></li>
+
+                <li><a class="nav-link text-black dropdown-item" href="#CpuBeginnerInfo">Jump to Cpu for Beginners</a></li>
+                <li><a class="nav-link text-black dropdown-item" href="#RamBeginnerInfo">Jump to Ram for Beginners</a></li>
+                <li><a class="nav-link text-black dropdown-item" href="#GpuBeginnerInfo">Jump to Gpu for Beginners</a></li>
+
                 <li><a class="nav-link text-black dropdown-item" href="#">Add more links here</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -81,6 +86,7 @@
                 </p>
             </div>
         </div>
+
         <div class="b-example-divider"></div>
         <div class="px-4 pt-5 my-5 text-center border-bottom">
             <h1 class="display-4 fw-bold text-body-emphasis">
@@ -139,8 +145,123 @@
 
         </div>
 
-        <div class="b-example-divider" ID = "Part Selector"></div>
-        <div class="container col-xxl-8 px-4 py-5 bg-primary">
+
+        <!-- This is where PC part beginner info starts-->
+        <!-- CPU -->
+        <div class="b-example-divider" ID="CpuBeginnerInfo"></div>
+        <div class="px-4 pt-5 my-5 text-center border-bottom">
+            <h1 class="display-4 fw-bold text-body-emphasis">
+                Process (CPU)
+            </h1>            
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">
+                    <section>
+                        <H3>What does it do?</H3>
+                        <p>
+                            The CPU, central processing unit, serves as the master of the computer which handles all the instruction execution.
+                        </p>
+                    </section>
+
+                    <section>
+                        <H3>What to look out for?</H3>
+                        <p> - Core Count
+                            - Clock Speed
+                        </p>
+                        
+                    </section>
+
+                    <section>
+                        <H3>Spec range by use case</H3>
+                        <p>
+                            - office use (excel, word)
+                            - gaming....
+                        </p>
+                        
+                    </section>
+                </p>
+                
+            </div>
+
+        </div>
+
+        <!-- RAM -->
+        <div class="b-example-divider" ID="RamBeginnerInfo"></div>
+        <div class="px-4 pt-5 my-5 text-center border-bottom">
+            <h1 class="display-4 fw-bold text-body-emphasis">
+                Main Memory (RAM)
+            </h1>            
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">
+                    <section>
+                        <H3>What does it do?</H3>
+                        <p>
+                            The RAM, random access memory, is the memory storage used by your computer for managing multiple tasks. 
+                        </p>
+                    </section>
+
+                    <section>
+                        <H3>What to look out for?</H3>
+                        <p> - capacity<br>
+                            - 
+                        </p>
+                        
+                    </section>
+
+                    <section>
+                        <H3>Spec range by use case</H3>
+                        <p>
+                            - office use (excel, word)<br>
+                            - gaming....
+                        </p>
+                        
+                    </section>
+                </p>
+                
+            </div>
+        </div>
+
+        <!-- GPU -->
+        <div class="b-example-divider" ID = "GpuBeginnerInfo"></div>
+        <div class="px-4 pt-5 my-5 text-center border-bottom">
+            <h1 class="display-4 fw-bold text-body-emphasis">
+                GPU (GPU)
+            </h1>            
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">
+                    <section>
+                        <H3>What does it do?</H3>
+                        <p>
+                            The GPU, ....
+                        </p>
+                    </section>
+
+                    <section>
+                        <H3>What to look out for?</H3>
+                        <p> - 
+                            - 
+                        </p>
+                        
+                    </section>
+
+                    <section>
+                        <H3>Spec range by use case</H3>
+                        <p>
+                            - office use (excel, word)
+                            - gaming....
+                        </p>
+                        
+                    </section>
+                </p>
+                
+            </div>
+        </div>
+
+        <!--  This is where PC part beginner info ends-->
+
+
+
+        <div class="b-example-divider" ID = "PartSelector"></div>
+        <div class="container col-xxl-8 px-4 py-5">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
                 <div class="col-10 col-sm-8 col-lg-6">
                 <img
@@ -170,8 +291,9 @@
                 </div>
             </div>
         </div>
+        
 
-        <div class="b-example-divider" ID = "Part Comparison"></div>
+        <div class="b-example-divider" ID = "PartComparison"></div>
         <div class="container col-xxl-8 px-4 py-5">
             <div class="row flex-lg-row align-items-center g-5 py-5">
                 <div class="col-10 col-sm-8 col-lg-6">
