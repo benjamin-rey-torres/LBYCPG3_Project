@@ -11,10 +11,12 @@
 $primary: #C890A7;
 $success: #511977;
 $body-bg: #FBF5E5;
+$carousel-control-color: #000000;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
+
 
 // 4. Include any default map overrides here
 
@@ -37,6 +39,7 @@ $body-bg: #FBF5E5;
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "../node_modules/bootstrap/scss/utilities/api";
+
 
 // 8. Add additional custom code here\
 .custom-element {
