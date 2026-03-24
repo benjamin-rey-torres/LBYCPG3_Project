@@ -143,9 +143,8 @@ function formatSpec(key) {
         .join(' ');
 }
 
-// =====================
+
 // PART COMPARE LOGIC
-// =====================
 
 const compareContainer = document.getElementById("compare-container");
 const compareRows = document.querySelectorAll("#PartSelector tbody tr, tbody tr");
