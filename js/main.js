@@ -4,7 +4,6 @@
 
 //import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 
-
 //
 // Place any custom JS here
 //
@@ -15,7 +14,10 @@ const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstra
 
 const part_select = document.getElementById("part-select-type");
 const available_parts = document.getElementById("parts");
-part_select.addEventListener('change',update_parts);
+
+if (part_select && available_parts) {
+    part_select.addEventListener('change', update_parts);
+}
 
 const parts = [
 
@@ -83,57 +85,189 @@ function update_parts() {
         }
     });
 
-    if(chosen_part_type ==="default"){
-        part_name.innerHTML = ""
-        part_type.innerHTML = ""
-        price.innerHTML = ""
-        spec1_name.innerHTML = ""
-        spec2_name.innerHTML = ""
-        spec3_name.innerHTML = ""
-        spec1_value.innerHTML = ""
-        spec2_value.innerHTML = ""
-        spec3_value.innerHTML = ""
+    if (chosen_part_type === "default") {
+        if (part_name) part_name.innerHTML = "";
+        if (part_type) part_type.innerHTML = "";
+        if (price) price.innerHTML = "";
+        if (spec1_name) spec1_name.innerHTML = "";
+        if (spec2_name) spec2_name.innerHTML = "";
+        if (spec3_name) spec3_name.innerHTML = "";
+        if (spec1_value) spec1_value.innerHTML = "";
+        if (spec2_value) spec2_value.innerHTML = "";
+        if (spec3_value) spec3_value.innerHTML = "";
     }
     else {
-    show_info()
+        show_info();
     }
 }
 
-available_parts.addEventListener('change',show_info);
+if (available_parts) {
+    available_parts.addEventListener('change', show_info);
+}
 
-const part_name = document.getElementById("part_name")
-const part_type = document.getElementById("part_type")
-const price = document.getElementById("price")
-const spec1_name = document.getElementById("spec1_name")
-const spec2_name = document.getElementById("spec2_name")
-const spec3_name = document.getElementById("spec3_name")
-const spec1_value = document.getElementById("spec1_value")
-const spec2_value = document.getElementById("spec2_value")
-const spec3_value = document.getElementById("spec3_value")
+const part_name = document.getElementById("part_name");
+const part_type = document.getElementById("part_type");
+const price = document.getElementById("price");
+const spec1_name = document.getElementById("spec1_name");
+const spec2_name = document.getElementById("spec2_name");
+const spec3_name = document.getElementById("spec3_name");
+const spec1_value = document.getElementById("spec1_value");
+const spec2_value = document.getElementById("spec2_value");
+const spec3_value = document.getElementById("spec3_value");
 
 function show_info() {
-    // by using the chosen part, we use the find function to find it in the parts array and get the needed values such as price and specs
     const chosen_part = available_parts.value;
-    const part_object = parts.find((element) => element.name === chosen_part)
+    const part_object = parts.find((element) => element.name === chosen_part);
 
-    part_name.innerHTML = chosen_part
-    part_type.innerHTML = part_object.type 
-    price.innerHTML= "₱" + part_object.price
-    const spec_keys = Object.keys(part_object.specs)
-    const spec_values = Object.values(part_object.specs)
-    // code put to fix formatting
-    spec1_name.innerHTML = spec_keys[0].split('_')
-         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-         .join(' ');
-    spec2_name.innerHTML = spec_keys[1].split('_')
-         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-         .join(' ');
-    spec3_name.innerHTML = spec_keys[2].split('_')
-         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-         .join(' ');
-    spec1_value.innerHTML = spec_values[0]
-    spec2_value.innerHTML= spec_values[1]
-    spec3_value.innerHTML = spec_values[2]
+    if (!part_object) return;
 
+    part_name.innerHTML = chosen_part;
+    part_type.innerHTML = part_object.type;
+    price.innerHTML = "₱" + part_object.price.toLocaleString();
 
+    const spec_keys = Object.keys(part_object.specs);
+    const spec_values = Object.values(part_object.specs);
+
+    spec1_name.innerHTML = formatSpec(spec_keys[0] || "");
+    spec2_name.innerHTML = formatSpec(spec_keys[1] || "");
+    spec3_name.innerHTML = formatSpec(spec_keys[2] || "");
+
+    spec1_value.innerHTML = spec_values[0] || "";
+    spec2_value.innerHTML = spec_values[1] || "";
+    spec3_value.innerHTML = spec_values[2] || "";
+}
+
+function formatSpec(key) {
+    return key.split('_')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+}
+
+// =====================
+// PART COMPARE LOGIC
+// =====================
+
+const compareContainer = document.getElementById("compare-container");
+const compareRows = document.querySelectorAll("#PartSelector tbody tr, tbody tr");
+
+document.querySelectorAll(".part-type").forEach(select => {
+    populateTypes(select);
+
+    select.addEventListener("change", function () {
+        const row = this.closest("tr");
+        const modelSelect = row.querySelector(".part-model");
+
+        populateModels(modelSelect, this.value);
+        updateCompare();
+    });
+});
+
+function populateTypes(select) {
+    const types = [...new Set(parts.map(p => p.type))];
+    select.innerHTML = '<option value="">Select Type</option>';
+
+    types.forEach(type => {
+        const opt = document.createElement("option");
+        opt.value = type;
+        opt.textContent = type;
+        select.appendChild(opt);
+    });
+}
+
+function populateModels(select, type) {
+    if (!select) return;
+
+    select.innerHTML = '<option value="">Select Model</option>';
+
+    const filtered = parts.filter(p => p.type === type);
+
+    filtered.forEach(part => {
+        const opt = document.createElement("option");
+        opt.value = part.name;
+        opt.textContent = part.name;
+        select.appendChild(opt);
+    });
+}
+
+document.addEventListener("change", function (e) {
+    if (
+        e.target.classList.contains("compare-check") ||
+        e.target.classList.contains("part-model") ||
+        e.target.classList.contains("part-type")
+    ) {
+        updateCompare();
+    }
+});
+
+function updateCompare() {
+    if (!compareContainer) return;
+
+    compareContainer.innerHTML = "";
+
+    const rows = document.querySelectorAll("tbody tr");
+    let selectedParts = [];
+
+    rows.forEach(row => {
+        const checkbox = row.querySelector(".compare-check");
+        const modelSelect = row.querySelector(".part-model");
+
+        if (!checkbox || !modelSelect) return;
+
+        const checked = checkbox.checked;
+        const model = modelSelect.value;
+
+        if (checked && model) {
+            const part = parts.find(p => p.name === model);
+            if (part) {
+                selectedParts.push(part);
+            }
+        }
+    });
+
+    selectedParts.slice(0, 3).forEach(part => {
+        const col = document.createElement("div");
+        col.className = "col-md-4 mb-4";
+
+        const specKeys = Object.keys(part.specs);
+        const specValues = Object.values(part.specs);
+
+        col.innerHTML = `
+            <img
+                src="placeholder.png"
+                class="d-block mx-auto img-fluid mb-3"
+                alt="${part.name}"
+                loading="lazy"
+                width="300"
+                height="300"
+            />
+            <h4 class="fw-bold">${part.name}</h4>
+            <hr>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">Type</th>
+                        <td>${part.type}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Price</th>
+                        <td>₱${part.price.toLocaleString()}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">${formatSpec(specKeys[0] || "")}</th>
+                        <td>${specValues[0] || ""}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">${formatSpec(specKeys[1] || "")}</th>
+                        <td>${specValues[1] || ""}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">${formatSpec(specKeys[2] || "")}</th>
+                        <td>${specValues[2] || ""}</td>
+                    </tr>
+                </tbody>
+            </table>
+        `;
+
+        compareContainer.appendChild(col);
+    });
 }
