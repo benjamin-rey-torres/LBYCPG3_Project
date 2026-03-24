@@ -82,4 +82,58 @@ function update_parts() {
             available_parts.appendChild(option);
         }
     });
+
+    if(chosen_part_type ==="default"){
+        part_name.innerHTML = ""
+        part_type.innerHTML = ""
+        price.innerHTML = ""
+        spec1_name.innerHTML = ""
+        spec2_name.innerHTML = ""
+        spec3_name.innerHTML = ""
+        spec1_value.innerHTML = ""
+        spec2_value.innerHTML = ""
+        spec3_value.innerHTML = ""
+    }
+    else {
+    show_info()
+    }
+}
+
+available_parts.addEventListener('change',show_info);
+
+const part_name = document.getElementById("part_name")
+const part_type = document.getElementById("part_type")
+const price = document.getElementById("price")
+const spec1_name = document.getElementById("spec1_name")
+const spec2_name = document.getElementById("spec2_name")
+const spec3_name = document.getElementById("spec3_name")
+const spec1_value = document.getElementById("spec1_value")
+const spec2_value = document.getElementById("spec2_value")
+const spec3_value = document.getElementById("spec3_value")
+
+function show_info() {
+    // by using the chosen part, we use the find function to find it in the parts array and get the needed values such as price and specs
+    const chosen_part = available_parts.value;
+    const part_object = parts.find((element) => element.name === chosen_part)
+
+    part_name.innerHTML = chosen_part
+    part_type.innerHTML = part_object.type 
+    price.innerHTML= "₱" + part_object.price
+    const spec_keys = Object.keys(part_object.specs)
+    const spec_values = Object.values(part_object.specs)
+    // code put to fix formatting
+    spec1_name.innerHTML = spec_keys[0].split('_')
+         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+         .join(' ');
+    spec2_name.innerHTML = spec_keys[1].split('_')
+         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+         .join(' ');
+    spec3_name.innerHTML = spec_keys[2].split('_')
+         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+         .join(' ');
+    spec1_value.innerHTML = spec_values[0]
+    spec2_value.innerHTML= spec_values[1]
+    spec3_value.innerHTML = spec_values[2]
+
+
 }
