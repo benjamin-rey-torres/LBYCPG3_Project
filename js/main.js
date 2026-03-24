@@ -236,7 +236,7 @@ function updateCompare() {
 
         col.innerHTML = `
             <img
-                src="placeholder.png"
+                src="PC Parts/${part.type}/${part.name}.jpg"
                 class="d-block mx-auto img-fluid mb-3"
                 alt="${part.name}"
                 loading="lazy"
