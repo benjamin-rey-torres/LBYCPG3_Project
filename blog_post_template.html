@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+
+    <!-- <script src="js/main.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+  </head>
+    
+  <header>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg bg-primary text-primary fixed-top">
+      <div class="container-fluid text-primary">
+        <a class="navbar-brand text-white" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+            </li>
+
+            <li class="nav-item dropdown"> <!-- Links for jumping to Sections-->  
+              <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Jump To 
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link text-black dropdown-item" href="#PartComparison">Jump to Part Comparison</a></li>
+                <li><a class="nav-link text-black dropdown-item" href="#PartSelector">Jump to Part Selector</a></li>
+
+                <li><a class="nav-link text-black dropdown-item" href="#CpuBeginnerInfo">Jump to Cpu for Beginners</a></li>
+                <li><a class="nav-link text-black dropdown-item" href="#RamBeginnerInfo">Jump to Ram for Beginners</a></li>
+                <li><a class="nav-link text-black dropdown-item" href="#GpuBeginnerInfo">Jump to Gpu for Beginners</a></li>
+
+                <li><a class="nav-link text-black dropdown-item" href="#">Add more links here</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>    
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <body class="body-bg">
+
+    <div class="b-example-divider"></div>
+    </div>
+    <div class="b-example-divider"></div>
+    </div>
+  <div class="container py-5">
+    <div class="overflow-hidden container col-xxl-10" style="max-height: 60vh;">
+        <img
+                    src="placeholder.png"
+                    class="d-block mx-lg-auto img-fluid"
+                    alt="Bootstrap Themes"
+                    loading="lazy"
+        />
+    </div>
+    <div class="container col-xxl-8 py-5">
+        <!-- in here you can kinda do your own thing -->
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 ">
+                    Part Selector
+        </h1>
+        <h4 class="display-6 fst-italic text-body-emphasis lh-1 mb-3 ">
+                    Written By:
+        </h4>
+        <hr>
+        <p class="lead text-body-emphasis just">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ullamcorper varius erat, eu finibus justo. Aliquam pellentesque sit amet neque id porttitor. Aenean convallis ex nec dolor finibus posuere. Sed dignissim malesuada dictum. Ut ac luctus nibh. Integer elementum vestibulum orci, eu mattis purus dapibus ac. Nullam nunc nisi, gravida eget volutpat ac, interdum nec mi. Fusce aliquet, mauris id facilisis fermentum, ex nulla fringilla lectus, sed semper elit ipsum at ante. Nulla vitae nulla id enim convallis imperdiet. Suspendisse scelerisque dapibus faucibus. Vestibulum pharetra nisl dictum neque varius luctus. Duis libero nisi, aliquet et faucibus blandit, lobortis nec magna. Maecenas luctus id est sed sodales. Suspendisse potenti.
+        </p>
+        <p class="lead text-body-emphasis">
+                Vivamus ut nunc tellus. Suspendisse vitae ante auctor, eleifend nulla non, bibendum massa. Sed tempor, dolor sit amet pellentesque consequat, nibh nunc iaculis lacus, et tempus neque tortor non sapien. In ante odio, tincidunt non arcu in, aliquam dignissim turpis. Aliquam sed ligula id velit egestas dapibus nec sit amet leo. Maecenas leo leo, semper non porta non, scelerisque sit amet leo. Integer ut nisi et nisi pellentesque viverra. Aenean pretium in ex eget elementum. Sed elit diam, ornare sit amet diam et, elementum placerat metus. Nam ullamcorper nulla vel orci cursus, vel feugiat turpis sagittis. Aenean pellentesque nisl a erat ultricies blandit. Integer dictum est et lacus consectetur aliquet.
+        </p>
+        <p class="lead text-body-emphasis">
+            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque feugiat nisi varius, auctor est ut, consequat nisl. Nunc aliquet vestibulum ipsum nec sodales. Phasellus ultrices nisi sed vehicula interdum. Etiam convallis sit amet eros commodo dignissim. Integer mattis pellentesque elit, eu sollicitudin sem eleifend eget. Aliquam erat volutpat. In sed mollis quam. Phasellus arcu massa, rhoncus tincidunt semper et, placerat id nibh. Etiam laoreet aliquet nunc in sollicitudin. Vivamus non lacus vulputate, bibendum diam eu, placerat turpis.
+        </p>
+        <div class="d-flex justify-content-center">
+        <figure class="figure ">
+        <img src="placeholder.png" class="figure-img img-fluid rounded" alt="..." width="300" height="300">
+        <figcaption class="figure-caption text-end">A caption for the above image.</figcaption>
+        </figure>
+        </div>
+        <p class="lead text-body-emphasis">
+            Aliquam at diam id arcu semper fermentum et eget dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris nec sagittis arcu. Vivamus varius tincidunt dui sit amet interdum. Phasellus in vulputate diam, et lobortis urna. Fusce fermentum hendrerit ex sed tristique. Nunc vitae bibendum lacus, sit amet posuere purus. Nulla varius cursus erat quis sagittis. Ut sit amet pharetra lorem, at suscipit augue. Nam sodales massa id nisi molestie porttitor.
+        </p>
+        <p class="lead text-body-emphasis">
+            Nunc in vestibulum metus. Mauris pretium sem odio, in porta sapien iaculis venenatis. Vivamus in ultricies augue, bibendum ullamcorper nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac fringilla justo, eu convallis diam. Nunc nec ex suscipit, consequat elit quis, eleifend arcu. Integer eget lobortis eros. Nam fermentum tincidunt felis. 
+        </p>
+    </div>
+  </div>
+
+  <script src="js\main.js"></script>
+  </body>
+</html>
