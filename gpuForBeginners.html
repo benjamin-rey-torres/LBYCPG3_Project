@@ -1,0 +1,191 @@
+<!-- GPU for Beginners -->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap demo</title>
+        <!-- <script src="js/main.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/custom.css">
+    </head>
+
+    <nav class="navbar navbar-expand-lg bg-primary text-primary fixed-top">
+        <button type="button" class="btn btn-sm btn-outline-secondary">
+            <a class="nav-link active" aria-current="page" href="blogs.html">       <!-- change href index.html#.... to specific link-->
+                Back to Blogs
+            </a>
+        </button>
+
+    </nav>
+    
+    <body>
+        <div style="padding-top: 72px;"></div>
+
+        <div class="container py-5">
+        <div class="overflow-hidden col-xxl-10 mx-auto mb-4" style="max-height:350px;">
+            <img src="placeholder.png" class="d-block mx-auto img-fluid rounded" alt="GPU Hero" style="width:100%;object-fit:cover;max-height:350px;">
+        </div>
+
+        <div class="col-lg-8 mx-auto">
+            <span class="badge bg-danger mb-2">GPU</span>
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-2">GPU for Beginners: Picking the Right Graphics Card</h1>
+            <h5 class="text-muted fst-italic mb-1">Written by: The PC Parts Guide Team</h5>
+            <p class="text-muted small mb-4">March 2026 &bull; 8 min read</p>
+            <hr>
+
+            <p class="lead">
+                The GPU (Graphics Card) is what makes your games look beautiful and run smoothly. It's the most expensive and important part in most gaming PCs.
+            </p>
+
+            <h2 class="mt-4">What Does a GPU Do?</h2>
+            <p>
+                The GPU is the artist. The CPU says to "draw a tree and a river," and the GPU does the heavylifting to paint every single leaf, every drop of water, every strand of grass, and every ray of light. Without a good GPU, everything will look blurry, pixelated, and ugly.
+            </p>
+            <p>
+                In a game running at 60 FPS (frames per second), your GPU is drawing 60 complete images every second. You need a powerful GPU to achieve that as drawing that many pictures that fast is incredibly demanding.
+            </p>
+            <p>
+                Modern GPUs also accelerate in AI tasks (like NVIDIA GPUs), video encoding/decoding, and scientific simulations, making them quite relevant beyond gaming.
+            </p>
+
+            <div class="d-flex justify-content-center my-4">
+            <figure class="figure">
+                <img src="placeholder.png" class="figure-img img-fluid rounded" alt="GPU" width="400">
+                <figcaption class="figure-caption text-center">A modern graphics card, the heart of any gaming or creative PC</figcaption>
+            </figure>
+            </div>
+
+            <h2 class="mt-4">The Important Specs</h2>
+
+            <h4>VRAM: The GPU's Memory</h4>
+            <p>
+                VRAM is like the GPU's <strong>desk space</strong>. It holds all the textures, colors, and 3D models it needs to draw what you see in your game.
+            </p>
+            <ul>
+                <li><strong>4GB VRAM:</strong> Okay for old games and low settings</li>
+                <li><strong>8GB VRAM:</strong> Good for 1080p gaming (most common)</li>
+                <li><strong>12GB VRAM:</strong> Great for 1440p gaming</li>
+                <li><strong>16GB+ VRAM:</strong> For 4K gaming and future-proofing</li>
+            </ul>
+            
+            <div class="alert alert-info mt-4">
+                <strong>IMPORTANT:</strong> If you run out of VRAM, your game will STUTTER like crazy. For modern games at 1080p, get at least a GPU with 8GB of VRAM.
+            </div>
+
+            <h4>Resolution: How Clear is Your Picture?</h4>
+            <p>
+                <strong>Resolution</strong> is how many tiny dots (pixels) make up your screen. More pixels = clearer picture = harder work for GPU.
+            </p>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tr><td><strong>1080p (Full HD)</strong></td><td>2 million pixels</td><td>Easy for most GPUs</td><td>8GB VRAM</td></tr>
+                    <tr><td><strong>1440p (2K)</strong></td><td>3.7 million pixels</td><td>sMid-range GPU (RX 6700XT or RTX 3060)</td><td>12GB VRAM</td></tr>
+                    <tr><td><strong>4K (Ultra HD)</strong></td><td>8.3 million pixels</td><td>Expensive GPU (RX 7900XT or RTX 4070)</td><td>16GB+ VRAM</td></tr>
+                </table>
+            </div>
+
+            <h2 class="mt-4">NVIDIA vs AMD: The Great Battle</h2>
+            <p>
+                It's like <strong>iPhone vs Android</strong> — both are great, but have different features and specialties.
+            </p>
+            <ul>
+                <li><strong>NVIDIA RTX (Green Team):</strong>
+                    <ul>
+                        <li>DLSS: Makes games run faster without losing quality</li>
+                        <li>Ray Tracing: Makes reflections and shadows look real</li>
+                        <li>Better for video editing and streaming</li>
+                        <li>Power efficient compared to matching AMD GPU</li>
+                        <li>Usually more expensive</li>
+                    </ul>
+                </li>
+                <li><strong>AMD RX (Red Team):</strong>
+                    <ul>
+                        <li>Better "bang for your buck" — more performance per peso</li>
+                        <li>Usually has more VRAM for the price</li>
+                        <li>FSR: Their version of DLSS</li>
+                        <li>Often cheaper for the same performance</li>
+                        <li>Performs worse than NVIDIA GPUs for editing, rendering, AI software, etc.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2 class="mt-4">What About Intel?</h2>
+            <p>
+                Intel entered the GPU market with their Arc series. They're still new and not as powerful as NVIDIA or AMD, but they offer good value for budget builds and are improving rapidly. If you're on a tight budget, an Intel Arc card might be worth considering.
+            </p>
+            
+            <div class="alert alert-warning mt-4">
+                <strong>WHAT TO CHOOSE:</strong> Want ray tracing and best features? Go NVIDIA. Want the most FPS for your money? Go AMD. Both are amazing in their own right.
+            </div>
+
+            <h4>Memory Type: GDDR6 vs GDDR6X</h4>
+            <p>
+            GDDR6X is a faster variant of GDDR6 with higher bandwidth. It's found on NVIDIA's higher-end cards. For most gamers, the difference is only noticeable at 4K or in memory-bandwidth-heavy games. GDDR6 is excellent for 1080p and 1440p.
+            </p>
+
+            <h2 class="mt-4">Choosing Your GPU: By Resolution & Budget</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead class="table-danger">
+                        <tr><th>Your Monitor</th><th>What You Need</th><th>Example GPU</th><th>Price Range</th><th>Good For</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1080p 60Hz</td><td>8GB VRAM</td><td>RX 6600 / RTX 3050</td><td>₱12,000 - ₱15,000</td><td>Casual gaming</td></tr>
+                        <tr><td>1080p 144Hz+</td><td>8-12GB VRAM</td><td>RTX 3060 / RX 6600 XT</td><td>₱15,000 - ₱22,000</td><td>Competitive gaming</td></tr>
+                        <tr><td>1440p</td><td>12-16GB VRAM</td><td>RTX 4070 / RX 7700 XT</td><td>₱28,000 - ₱38,000</td><td>AAA games, streaming</td></tr>
+                        <tr><td>4K</td><td>16GB+ VRAM</td><td>RTX 4080 / RX 7900 XT</td><td>₱50,000 - ₱100,000+</td><td>Ultra settings, future-proof</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 class="mt-4">Don't Forget Your PSU (Power Supply Unit)</h2>
+            <p>
+            High-end GPUs draw a whole lot of power. Always leave headroom — if your GPU calls for 650W, pair it with an 850W unit for stability and future upgrades.
+            </p>
+
+            <ul>
+                <li><strong>Budget GPU (RX 6600, RTX 3050):</strong> Needs 500W-550W PSU</li>
+                <li><strong>Mid-range GPU (RTX 3060, RX 6700):</strong> Needs 600W-650W PSU</li>
+                <li><strong>High-end GPU (RTX 4070, RX 7800):</strong> Needs 700W-750W PSU</li>
+                <li><strong>Top-tier GPU (RTX 4080, RX 7900):</strong> Needs 850W+ PSU</li>
+            </ul>
+
+            <div class="alert alert-warning">
+                <strong>SAFETY TIP:</strong> Always buy a good quality PSU from trusted brands (Corsair, Seasonic, EVGA). A cheap PSU can damage your expensive GPU so choose carefully!
+            </div>
+
+            <div class="alert alert-danger mt-4">
+            <strong>Watch out for bottlenecks:</strong> Pairing a very powerful GPU with a weak CPU can cause a CPU bottleneck. The CPU can't give instructions fast enough, so your expensive GPU just sits around doing nothing.<br><br>
+            <strong>Example:</strong> RTX 4090 (₱85,000) + Old i3 CPU (₱4,000) = WASTE OF MONEY!<br><br>
+                <strong>Good matches:</strong><br>
+                • RTX 3060 → Ryzen 5 5600<br>
+                • RTX 4070 → Ryzen 7 5700X / i5-13600K<br>
+                • RTX 4080 → Ryzen 7 7800X3D / i7-13700K<br><br>
+
+                Always check benchmarks for your specific CPU + GPU combo to avoid bottlenecks.
+            </div>
+
+            <div class="simple-box mt-4">
+                <strong>QUICK SUMMARY:</strong><br>
+                • GPU = Artist that draws everything you see<br>
+                • More VRAM = Can handle higher resolutions<br>
+                • 8GB VRAM is minimum for modern gaming<br>
+                • NVIDIA has better features (DLSS, Ray Tracing)<br>
+                • AMD often gives more performance for less money<br>
+                • Match your GPU with a good CPU and PSU!
+            </div>
+
+            <div class="d-flex gap-3 mt-5">
+            <a href="part_select.html" class="btn btn-primary">Browse GPUs in Part Selector</a>
+            <a href="index.html" class="btn btn-outline-secondary">Back to Home</a>
+            </div>
+            
+        </div>
+        </div>
+
+        <div class="b-example-divider mt-5"></div>
+    </body>
+</html>
