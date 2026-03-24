@@ -114,12 +114,16 @@ const spec3_name = document.getElementById("spec3_name");
 const spec1_value = document.getElementById("spec1_value");
 const spec2_value = document.getElementById("spec2_value");
 const spec3_value = document.getElementById("spec3_value");
+const image_source = document.getElementById("part_image")
 
 function show_info() {
     const chosen_part = available_parts.value;
     const part_object = parts.find((element) => element.name === chosen_part);
 
     if (!part_object) return;
+
+    image_source.src = "PC Parts/" + part_object.type + "/" + chosen_part + ".jpg"
+
 
     part_name.innerHTML = chosen_part;
     part_type.innerHTML = part_object.type;
