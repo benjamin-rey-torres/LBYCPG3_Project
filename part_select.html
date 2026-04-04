@@ -56,63 +56,90 @@
     <br><h1 class="text-center">Part Selector</h1><hr>
   <div class="container px-4 py-5 text-center">
     <form>
-    <!-- first select menu has id of part-select-type to select the type of part selected, this triggers a listener which then shows the target parts that match this Type -->
-    <select id="part-select-type" class="form-select part_select_type" aria-label="Default select example" >
-        <option selected value="default">Open this select menu</option>
-        <option value="CPU">CPU</option>
-        <option value="GPU">GPU</option>
-        <option value="RAM">RAM</option>
-        <option value="STORAGE">STORAGE</option>
-        <option value="MOTHERBOARD">MOTHERBOARD</option>
-        <option value="PSU">PSU</option>
-        <option value="CASE">CASE</option>
-        <option value="COOLER">COOLER</option>
-      </select>
-      <!-- the second selecet menu has the id parts to both edit the options and check the value to show the correct elements -->
-      <select id="parts" class="form-select" aria-label="Default select example">
-      </select>
+    
+    <!-- This is a grid to center the drop down for part type and model, copied the drop down selection as is inside row 1 col 2 -->
+    <div class="container">
+      <!-- row 1-->
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <!-- first select menu has id of part-select-type to select the type of part selected, this triggers a listener which then shows the target parts that match this Type -->
+            <select id="part-select-type" class="form-select part_select_type" aria-label="Default select example" >
+                <option selected value="default">Open this select menu</option>
+                <option value="CPU">CPU</option>
+                <option value="GPU">GPU</option>
+                <option value="RAM">RAM</option>
+                <option value="STORAGE">STORAGE</option>
+                <option value="MOTHERBOARD">MOTHERBOARD</option>
+                <option value="PSU">PSU</option>
+                <option value="CASE">CASE</option>
+                <option value="COOLER">COOLER</option>
+            </select>
+
+            <!-- the second selecet menu has the id parts to both edit the options and check the value to show the correct elements -->
+            <select id="parts" class="form-select" aria-label="Default select example">
+            </select>
+
+        </div>
+        <div class="col-3"></div>
+      </div>
+      <!-- row 2-->
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+          <div class="container px-4 py-5 text-center">
+              <img
+                            id = "part_image"
+                            src="placeholder.png"
+                            class="d-block mx-lg-auto img-fluid"
+                            alt="Bootstrap Themes"
+                            loading="lazy"
+                            width="400"
+                            height="400"
+                />
+                <br>
+                <h1 id = "part_name" class="display-5 fw-bold text-body-emphasis lh-1 mb-3 ">
+                            Part Name
+                </h1>
+                <hr>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Type</th>
+                      <td id = "part_type"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Price</th>
+                      <td id = "price"></td>
+                    </tr>
+                    <tr>
+                      <th id="spec1_name" scope="row"></th>
+                      <td id="spec1_value"></td>
+                    </tr>
+                    <tr>
+                      <th id="spec2_name" scope="row"></th>
+                      <td id="spec2_value"></td>
+                    </tr>
+                    <tr>
+                      <th id="spec3_name" scope="row"></th>
+                      <td id="spec3_value"></td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+        </div>
+        <div class="col-4"></div>
+      </div>
+
+    </div>
+
+    
+
+
+      
     </form>
   </div>
-  <div class="container px-4 py-5 text-center">
-      <img
-                    id = "part_image"
-                    src="placeholder.png"
-                    class="d-block mx-lg-auto img-fluid"
-                    alt="Bootstrap Themes"
-                    loading="lazy"
-                    width="400"
-                    height="400"
-        />
-        <br>
-        <h1 id = "part_name" class="display-5 fw-bold text-body-emphasis lh-1 mb-3 ">
-                    Part Name
-        </h1>
-        <hr>
-        <table class="table">
-          <tbody>
-            <tr>
-              <th scope="row">Type</th>
-              <td id = "part_type"></td>
-            </tr>
-            <tr>
-              <th scope="row">Price</th>
-              <td id = "price"></td>
-            </tr>
-            <tr>
-              <th id="spec1_name" scope="row"></th>
-              <td id="spec1_value"></td>
-            </tr>
-            <tr>
-              <th id="spec2_name" scope="row"></th>
-              <td id="spec2_value"></td>
-            </tr>
-            <tr>
-              <th id="spec3_name" scope="row"></th>
-              <td id="spec3_value"></td>
-            </tr>
-          </tbody>
-        </table>
-  </div>
+  
 
   <script src="js\main.js"></script>
   </body>
