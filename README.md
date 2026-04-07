@@ -8,3 +8,5 @@ Member names and roles
 - Torres, Benjamin Rey Gapusan
 
 “We certify that no AI tools were used in proposing, designing, coding, or documenting this project.”
+
+![signatures](/Images/signatures.jpg)
